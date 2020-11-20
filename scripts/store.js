@@ -4,7 +4,7 @@ const items = [];
 let hideCheckedItems = false;
 
 function findById(id) {
-   let list = store.items;
+   let list = this.items;
    let found = list.find(item => id === item.id)
    return found;
 };
@@ -19,7 +19,7 @@ function addItem(name) {
 };
 
 function findAndToggleChecked(id) {
-    let item = this.findByItem;
+    let item = this.findById(id);
     item.checked = !item.checked;
 };
 
@@ -37,6 +37,10 @@ function findAndDelete(id) {
     this.items = this.items.filter(item => item.id !== id);
 }
 
+function toggleCheckedFilter() {
+    this.hideCheckedItems = !this.hideCheckedItems;
+}
+
 export default {
     items,
     hideCheckedItems,
@@ -44,6 +48,7 @@ export default {
     addItem,
     findAndToggleChecked,
     findAndUpdateName,
-    findAndDelete
+    findAndDelete,
+    toggleCheckedFilter
 };
 
