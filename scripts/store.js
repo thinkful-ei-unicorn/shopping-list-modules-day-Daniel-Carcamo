@@ -5,7 +5,7 @@ let hideCheckedItems = false;
 
 function findById(id) {
    let list = this.items;
-   let found = list.find(item => id === item.id)
+   let found = list.find(item => id === item.id);
    return found;
 };
 
@@ -23,10 +23,10 @@ function findAndToggleChecked(id) {
     item.checked = !item.checked;
 };
 
-function findAndUpdateName(id, newName) {
+function findAndUpdateName(id, name) {
     try {
         item.validateName(name);
-        let currentItem = this.findById(name);
+        let currentItem = this.findById(id);
         currentItem.name = name;
     } catch (error) {
         console.log(`Cannot update name: ${error.message}`)

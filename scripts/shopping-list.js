@@ -104,7 +104,7 @@ const handleDeleteItemClicked = function () {
  */
 const handleToggleFilterClick = function () {
   $('.js-filter-checked').click(() => {
-    toggleCheckedFilter();
+    store.toggleCheckedFilter();
     render();
   });
 };
